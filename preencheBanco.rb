@@ -9,25 +9,7 @@ def iniciaPokemon()
     "Charizard", "Squirtle", "Wartortle", "Blastoise", "Caterpie", "Metapod",
     "Butterfree", "Weedle", "Kakuna", "Beedril", "Pidgey", "Pidgeotto", "Pidgeot",
     "Rattata", "Raticatate", "Spearow", "Fearow", "Ekans", "Arbok", "Pikachu",
-    "Raichu", "Sandshrew", "Sandslash", "Nidoran Femea", "Nidorina", "Nidoqueen",
-    "Nidoran Macho", "Nidorino", "Nidoking", "Clefairy", "Clefable", "Vulpix",
-    "Ninetales", "Jigglypuff", "Wigglytuff", "Zubat", "Golbat", "Oddish", "Gloom",
-    "Vileplume", "Paras", "Parasect", "Venonat", "Venomoth", "Diglett", "Dugtrio",
-    "Meowth", "Persian", "Psyduck", "Golduck", "Mankey", "Primeape", "Growlithe",
-    "Arcanine", "Poliwag", "Poliwhirl", "Poliwrath", "Abra", "Kadabra", "Alakazam",
-    "Machop", "Machoke", "Machamp", "Bellsprout", "Weepinbell", "Victreebel",
-    "Tentacool", "Tentacruel", "Geodude", "Graveler", "Golem", "Ponyta", "Rapidash",
-    "Slowpoke", "Slowbro", "Magnemite", "Magneton", "Farfetch", "Doduo", "Dodrio",
-    "Seel", "Dewgong", "Grimer", "Muk", "Shellder", "Cloyster", "Gastly", "Haunter",
-    "Gengar", "Onix", "Drowzee", "Hypno", "Krabby", "Kingler", "Voltorb", "Electrode",
-    "Exeggute", "Exeggutor", "Cubone", "Marowak", "Hitmonlee", "Hitmonchan", "Lickitung",
-    "Koffing", "Weezing", "Rhyhorn", "Rhydon", "Chansey", "Tangela", "Kangaskhan",
-    "Horsea", "Seadra", "Goldeen", "Seaking", "Staryu", "Starmie", "Mr. Mime",
-    "Scyther", "Jynx", "Electabuzz", "Magmar", "Pinsir", "Tauros", "Magikarp",
-    "Gyrados", "Lapras", "Ditto", "Eevee", "Vaporeon", "Jolteon", "Flareon",
-    "Porygon", "Omanyte", "Omastar", "Kabuto", "Kabutops", "Aerodactyl",
-    "Snorlax", "Articuno", "Zapdos", "Moltres", "Dratini", "Dragonair", "Dragonite",
-    "Mewtwo", "Mew"]
+    "Raichu"]
     
 	cont = 1
 	lista_pokemon.each do |p|
@@ -53,27 +35,20 @@ def iniciaTipoPokemon()
 	pokes.each do |poke|
         tipo1 = Tipo.find(Random.new.rand(1..16))
         poke.tipos << tipo1
-        if cont > 30
+        if cont > 10
             tipo2 = Tipo.find(Random.new.rand(1..16))
             while tipo1 == tipo2
                 tipo2 = Tipo.find(Random.new.rand(1..16))
 		end
             poke.tipos << tipo2
 	end
-        if cont > 80
+        if cont > 20
             tipo3 = Tipo.find(Random.new.rand(1..16))
             while tipo3 == tipo2 || tipo1 == tipo3
                 tipo3 = Tipo.find(Random.new.rand(1..16)) 
 		end
             poke.tipos << tipo3
 	end
-        if cont > 130
-            tipo4 = Tipo.find(Random.new.rand(1..16))
-            while tipo1 == tipo4 || tipo2 == tipo4 || tipo3 == tipo4
-                tipo4 = Tipo.find(Random.new.rand(1..16)) 
-		end
-            poke.tipos << tipo4
-        end
         cont += 1
 	end
 end
