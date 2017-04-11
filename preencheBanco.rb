@@ -1,9 +1,7 @@
 require 'rubygems'
 require 'active_record'
-require './pokemon.rb'
-require './treinador.rb'
-require './tipo.rb'
-require './pokedex.rb'
+require './main.rb'
+
 
 def iniciaPokemon()
     
