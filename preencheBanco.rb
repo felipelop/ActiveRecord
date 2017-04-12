@@ -71,8 +71,8 @@ end
 
 def insereTipo()
     lista_tipo = ["Eletrico", "Metal", "Normal", "Fogo", "Agua", "Planta",
-    "Inseto", "Venenoso", "Terra", "Pedra", "Psiquico", "Voador", "Fantasma",
-    "Gelo", "Fada", "Dragao" ]
+    "Inseto", "Venenoso", "Terra", "Pedra", "Psiquico", "Lutador", "Voador", 
+    "Fantasma", "Gelo", "Fada", "Dragao" ]
 
     lista_tipo.each do |t|
         tip = Tipo.new()

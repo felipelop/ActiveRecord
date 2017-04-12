@@ -28,6 +28,7 @@ class TipoPokemon < ActiveRecord::Base;
     belongs_to :tipo
 end
 
+#Cria uma Hash com os argumentos passados separando eles por = e criando o =>
 def argumentos(args)
 	hash = Hash.new
 	args.each do |arg|  
@@ -122,6 +123,7 @@ def exclui()
 end
 
 def altera()
+	#toda alteração precisa do id da linha que deseja alterar
 	case ARGV.second
 	when 'pokemon'
 		puts "Antes da alteração"
@@ -161,6 +163,7 @@ def altera()
 end
 
 def lista()
+	puts "Listagem dos elementos:"
 	case ARGV.second
 	when 'pokemon'
 		pokemons = Pokemon.all
